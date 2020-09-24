@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string.h>
+#include <string>
+#include <sstream>
+#include <time.h>
+#include <gmp.h>
+#include <fstream>
+#include <vector>
+#include <iostream>
+#include "cgicc/CgiDefs.h"
+#include "cgicc/Cgicc.h"
+#include "cgicc/HTTPHTMLHeader.h"
+#include "cgicc/HTMLClasses.h"
+#include "cgicc/HTTPRedirectHeader.h"
+
+
+using namespace std;
+using namespace cgicc;
+
+
+int main(int argc, char **argv)
+{
+  try {
+    Cgicc cgi;
+       // Send HTTP header: Content-type: text/html
+       cout << HTTPHTMLHeader() << endl;           
+
+       cout << HTMLDoctype(HTMLDoctype::eStrict) << endl;
+
+
+       // Prlong long: <html lang="en" dir="LTR">
+       cout << html().set("lang", "EN").set("dir", "LTR") << endl;
+
+       // Set up the HTML document
+       cout << html() << head() << title("Paillier Matrix Decryption") << endl;
+cout<<"<style>h2 {font: 20px; color:white;}</style>"<<endl;
+cout<<"<style>h1{border-bottom: 6px solid;}</style>"<<endl;
+cout<<"<style>input{  position: absolute; r; width: 40%; height: 10%; color: brown; border-radius: 60px; background: none; cursor: pointer; border: 2px solid #4caf50; color: white;}</style>"<<endl;
+  cout<<head() << endl;
+       cout << body().set("bgcolor","#191919").set("text","white").set("link","#0000ff").set("vlink","#000080") << endl;
+       cout << h1("Paillier Matrix Decryption. ") << endl;
+
+clock_t decryptStart, decryptEnd;
+decryptStart = clock();
+
